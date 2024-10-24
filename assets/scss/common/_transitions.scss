@@ -1,0 +1,27 @@
+.fade {
+	&-enter {
+		opacity: 0;
+	}
+
+	&-enter-active,
+	&-leave-active {
+		transition: opacity 1.3s ease;
+	}
+
+	&-enter-from,
+	&-leave-to {
+		transition: opacity 1.3s ease;
+		opacity: 0;
+	}
+}
+
+.appear-enter-active,
+.appear-leave-active {
+	transition: opacity .4s ease, transform .4s ease;
+}
+
+.appear-enter,
+.appear-leave-active {
+	opacity: 0;
+	transform: translateY(64px);
+}
