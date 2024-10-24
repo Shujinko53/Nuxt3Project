@@ -1,17 +1,33 @@
 <template>
 	<aside class="aside">
-		<NuxtLink to="/" class="logo">
-			<!-- <NuxtImg src="" alt="Logo" /> -->
+		<!-- <NuxtLink to="/" class="logo">
+			<NuxtImg src="" alt="Logo" />
 			 Icon logo
-		</NuxtLink>
+		</NuxtLink> -->
 
-		<button class="LogoutBtn">
+		<button class="LogoutBtn" @click="logout">
 			<NuxtIcon name="logout" filled />
 		</button>
+
+		<LayoutMenu />
 	</aside>
 </template>
 
 <script lang="ts" setup>
+	import { account } from '@/utils/appwrite';
+	import { useIsLoadingStore, userAuthStore } from '~/store/auth.store';
+
+	const isLoadingStore = useIsLoadingStore();
+	const router = useRouter();
+	const authStore = userAuthStore();
+
+	const logout = async () => {``
+		isLoadingStore.set(true);
+		await account.deleteSession('current');
+		authStore.clear();
+		await router.push('/login');
+		isLoadingStore.set(false);
+	}
 </script>
 
 <style lang="scss">
@@ -19,10 +35,10 @@
 		position: relative;
 		display: flex; 
 		flex-direction: column;
-		padding: 8rem 4rem;
+		padding: 10rem 2rem 4rem;
 		background-color: $sidebar;
 
-		.logo {
+		.logo { 
 			margin: 0 auto;
 			font-size: 2rem;
 			font-family: 'Lato', sans-serif;

@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 		'nuxt-icons',
 		['@nuxtjs/google-fonts', {
 			families: {
-				Roboto: true,
+				// Roboto: true,
 				// Inter: '200..700',
 				Lato: {
 					wght: [300, 400, 700],
@@ -21,8 +21,9 @@ export default defineNuxtConfig({
 				// 	wght: '200..900',
 				// 	ital: '200..700',
 				// }
-			}
-		}]
+			},
+		}],
+		'@pinia/nuxt'
 	],
 	css: ['~/assets/scss/bundle.scss'],
 	vite: {
@@ -34,5 +35,8 @@ export default defineNuxtConfig({
 				}
 			}
 		}
-	}
-})
+	},
+	pinia: {
+		storesDirs: ['./store/**'],
+	  },
+})	
