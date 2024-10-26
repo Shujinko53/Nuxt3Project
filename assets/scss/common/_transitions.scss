@@ -5,13 +5,14 @@
 
 	&-enter-active,
 	&-leave-active {
-		transition: opacity 1.3s ease;
+		transition: opacity .3s ease;
 	}
 
 	&-enter-from,
 	&-leave-to {
-		transition: opacity 1.3s ease;
+		position: absolute;
 		opacity: 0;
+		transition: opacity .3s ease;
 	}
 }
 
@@ -24,4 +25,23 @@
 .appear-leave-active {
 	opacity: 0;
 	transform: translateY(64px);
+}
+
+.slideRight {
+	&-enter {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+
+	&-enter-active,
+	&-leave-active {
+		transition: opacity .5s ease, transform .5s ease;
+	}
+
+	&-enter-from,
+	&-leave-to {
+		opacity: 0;
+		transform: translateX(100%);
+		transition: opacity .5s ease .2s, transform .5s ease .1s;
+	}
 }

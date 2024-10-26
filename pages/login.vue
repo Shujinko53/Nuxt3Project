@@ -18,7 +18,7 @@
 </template>
  
 <script setup lang="ts">
-	import { account } from '@/utils/appwrite';
+	import {  ID, account } from '@/utils/appwrite';
 	import { useIsLoadingStore, userAuthStore } from '~/store/auth.store';
 
 	useHead({
@@ -40,7 +40,7 @@
 
 		const response = await account.get();
 
-		console.log('response => ', response, '\naccount => ', account);
+		// console.log('response => ', response, '\naccount => ', account);
 
 		if (response) {
 			authStore.set({
@@ -112,30 +112,7 @@
 		}
 
 		&_btn {
-			display: flex;
-			align-items: center;
-			justify-content: center;
 			flex-basis: 0;
-			flex-grow: 1;
-			height: 4rem;
-			padding: 0 1rem;
-			border-radius: .6rem;
-			background-color: $input;
-			border: 1px solid $black-100;
-			font-size: 1.6rem;
-			line-height: 1;
-			color: $text-color;
-			transition:
-				background-color .3s ease,
-				opacity .1s ease-in-out;
-
-			&:hover {
-				background-color: rgba($gray-100, .2);
-			}
-
-			&:active {
-				opacity: .6;
-			}
 		}
 	}
 

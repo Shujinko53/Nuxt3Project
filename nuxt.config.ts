@@ -5,9 +5,10 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxt/image',
 		'nuxt-icons',
+		'@pinia/nuxt',
 		['@nuxtjs/google-fonts', {
 			families: {
-				// Roboto: true,
+				Roboto: true,
 				// Inter: '200..700',
 				Lato: {
 					wght: [300, 400, 700],
@@ -23,7 +24,9 @@ export default defineNuxtConfig({
 				// }
 			},
 		}],
-		'@pinia/nuxt'
+		['@vee-validate/nuxt', {
+			autoImports: true,
+		},]
 	],
 	css: ['~/assets/scss/bundle.scss'],
 	vite: {
