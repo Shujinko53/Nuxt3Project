@@ -17,7 +17,7 @@
 			v-model="name"
 			type="text"
 			placeholder="Наименование"
-			class="CreateDeal_form_input"
+			class="CreateDeal_form-input"
 		>
 
 		<input
@@ -25,7 +25,7 @@
 			v-model="price"
 			type="number"
 			placeholder="Сумма"
-			class="CreateDeal_form_input"
+			class="CreateDeal_form-input"
 		>
 
 		<input
@@ -33,7 +33,7 @@
 			v-model="customerName"
 			type="text"
 			placeholder="Компания"
-			class="CreateDeal_form_input"
+			class="CreateDeal_form-input"
 		>
 
 		<input
@@ -41,7 +41,7 @@
 			v-model="customerEmail"
 			type="text"
 			placeholder="Email"
-			class="CreateDeal_form_input"
+			class="CreateDeal_form-input"
 		>
 
 		<button
@@ -135,9 +135,9 @@
 		flex-direction: column;
 		row-gap: 1rem;
 		margin-bottom: 2rem;
-		animation: fromAppearance .4s ease-in-out;
+		animation: formAppearance .4s ease-in-out;
 
-		&_input {
+		&-input {
 			display: flex;
 			align-items: center;
 			height: 4rem;
@@ -168,7 +168,7 @@
 		}
 	}
 
-	@keyframes fromAppearance {
+	@keyframes formAppearance {
 		0% {
 			border-color: rgba($light-green, 1);
 			opacity: 0;

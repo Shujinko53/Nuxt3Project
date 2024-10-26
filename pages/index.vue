@@ -36,7 +36,7 @@
 		</div>
 
 		<Transition name="fade">
-			<Slideover v-if="store.isOpen" />
+			<Slideover v-show="store.isOpen" />
 		</Transition>
 	</div>
 </template>
@@ -99,11 +99,6 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-
-	.page_title {
-		margin-bottom: 4rem;
-		color: $text-color;
-	}
 
 	.loading_status {
 		font-size: 2.2rem;
